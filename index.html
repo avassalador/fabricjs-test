@@ -10,6 +10,17 @@
       (function() {
    
         var canvas = new fabric.Canvas('c');
+        var retangulo = new fabric.Rect({
+          left: 100,
+          top: 100,
+          fill: 'blue',
+          width: 35,
+          height: 25
+        });
+
+        //adiciona retangulo dentro do canvas
+
+        canvas.add(retangulo);
    
       })();
     </script>
