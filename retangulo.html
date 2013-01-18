@@ -5,14 +5,15 @@
     <script src="https://raw.github.com/kangax/fabric.js/master/dist/all.js"></script>
   </head>
   <body>
-    <button name="addRect" id="addRect">Adicionar Retangulo Rotacionado</button>
+    <button name="addRectRot" id="addRectRot">Adicionar Retangulo Rotacionado</button>
+    <button name="addRect" id="addRect">Adicionar Retangulo Normal</button>
     <canvas id="c" width="960" height="500" style="border:1px solid #ccc"></canvas>
     <script>
       (function() {
 
         var canvas = new fabric.Canvas('c');
         var retangulo = new fabric.Rect({
-          left: 100,
+          left: 200,
           top: 100,
           fill: 'blue',
           width: 35,
@@ -31,12 +32,16 @@
         //adiciona retangulo dentro do canvas
         addRect.addEventListener("click",
           function(){
+            canvas.add(retangulo);
+          },
+          false
+        );
+        addRectRot.addEventListener("click",
+          function(){
             canvas.add(retanguloRotacionado);
           },
           false
         );
-        canvas.add(retangulo);
-
       })();
     </script>
   </body>
